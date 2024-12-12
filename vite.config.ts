@@ -15,6 +15,7 @@ export default defineConfig(() => ({
     dts({
       include: ['src/**/*.ts', 'src/**/*.tsx'],
       exclude: ['src/App.tsx', 'src/main.tsx'],
+      copyDtsFiles: true,
       insertTypesEntry: true,
       rollupTypes: true,
     }),
