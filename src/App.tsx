@@ -1,6 +1,6 @@
 import React from 'react'
 import './components/index.css'
-import { ChatWidget, VideoChatProvider } from '../'
+import { ChatWidget, VideoChatProvider } from '../dist'
 const App = () => {
   return (
     <VideoChatProvider

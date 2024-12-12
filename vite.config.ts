@@ -13,25 +13,17 @@ export default defineConfig(() => ({
     react(),
     tsConfigPaths(),
     dts({
-      copyDtsFiles: true,
-      include: ['**/*.ts', '**/*.tsx', '**/*.js'],
-      exclude: [
-        'src/vite-env.d.ts',
-        'src/App.tsx',
-        'src/main.tsx',
-        '**/*.test.ts',
-        '**/*.test.tsx',
-        '**/Demo.tsx',
-        'node_modules',
-        '__VLS_types.d.ts',
-      ],
+      include: ['src/**/*.ts', 'src/**/*.tsx'],
+      exclude: ['src/App.tsx', 'src/main.tsx'],
+      insertTypesEntry: true,
+      rollupTypes: true,
     }),
   ],
   
   build: {
     sourcemap: true,
     lib: {
-      entry: 'src/index.ts',
+      entry: 'src/index.tsx',
       name: 'AkoolReactSDK',
       fileName: 'akool-react-sdk'
     },

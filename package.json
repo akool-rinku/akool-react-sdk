@@ -34,8 +34,8 @@
     },
     "./dist/style.css": "./dist/akool-react-sdk.css"
   },
-  "main": "./dist/index.umd.cjs",
-  "module": "./dist/index.js",
+  "main": "./akool-react-sdk.umd.cjs",
+  "module": "./dist/akool-react-sdk.js",
   "types": "./dist/index.d.ts",
   "devDependencies": {
     "@types/node": "^22.10.2",

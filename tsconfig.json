@@ -21,7 +21,7 @@
     "outDir": "dist",
      "paths": {
       "@/*": ["./src/*"],
-      "akool-react-sdk": [ "src/index.ts" ]
+      "akool-react-sdk": [ "src/index.tsx" ]
     },
     "typeRoots": [
       "node_modules/@types",
