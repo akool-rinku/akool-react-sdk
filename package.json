@@ -10,7 +10,8 @@
     "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
     "lint:fix": "eslint --fix 'src/**/*.{jsx,ts,tsx}'",
     "format": "prettier --write src//**/*.{ts,tsx,css} --config ./.prettierrc",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "rollup": "rollup -c"
   },
   "husky": {
     "hooks": {
@@ -28,13 +29,13 @@
   ],
   "exports": {
     ".": {
-      "import": "./dist/index.es.js",
-      "require": "./dist/index.umd.js"
+      "import": "./dist/akool-react-sdk.js",
+      "require": "./dist/akool-react-sdk.umd.cjs"
     },
     "./dist/style.css": "./dist/akool-react-sdk.css"
   },
-  "main": "./dist/index.umd.js",
-  "module": "./dist/index.es.js",
+  "main": "./dist/index.umd.cjs",
+  "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "devDependencies": {
     "@types/node": "^22.10.2",
@@ -66,7 +67,9 @@
   },
   "peerDependencies": {
     "react": "16.8.0 || >=17.x",
-    "react-dom": "16.8.0 || >=17.x"
+    "react-dom": "16.8.0 || >=17.x",
+    "agora-rtc-sdk-ng": "^4.22.2",
+    "framer-motion": "^11.13.5"
   },
   "repository": {
     "type": "git",
@@ -82,12 +85,17 @@
   "dependencies": {
     "@radix-ui/react-avatar": "^1.1.1",
     "@radix-ui/react-slot": "^1.1.0",
+    "@rollup/plugin-node-resolve": "^15.3.0",
+    "@rollup/plugin-typescript": "^12.1.1",
     "@vitejs/plugin-react-swc": "^3.7.2",
     "agora-rtc-sdk-ng": "^4.22.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "framer-motion": "^11.13.5",
     "lucide-react": "^0.468.0",
+    "rollup": "^4.28.1",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
     "tailwind-merge": "^2.5.5",
     "tailwindcss-animate": "^1.0.7"
   }

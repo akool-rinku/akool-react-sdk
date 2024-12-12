@@ -1,5 +1,5 @@
 
-import { resolve } from 'node:path'
+import { resolve } from 'path'
 
 import react from '@vitejs/plugin-react-swc'
 import { defineConfig } from 'vite'
@@ -13,22 +13,27 @@ export default defineConfig(() => ({
     react(),
     tsConfigPaths(),
     dts({
-      include: ['src/components/', 'src/index.ts'],
-      insertTypesEntry: true, // Add this line
-      rollupTypes: true,      // Add this line
+      copyDtsFiles: true,
+      include: ['**/*.ts', '**/*.tsx', '**/*.js'],
+      exclude: [
+        'src/vite-env.d.ts',
+        'src/App.tsx',
+        'src/main.tsx',
+        '**/*.test.ts',
+        '**/*.test.tsx',
+        '**/Demo.tsx',
+        'node_modules',
+        '__VLS_types.d.ts',
+      ],
     }),
   ],
-  resolve: {
-    alias: {
-      "@": resolve(__dirname, "./src"),
-    },
-  },
+  
   build: {
+    sourcemap: true,
     lib: {
-      entry: resolve('src', 'index.ts'),
+      entry: 'src/index.ts',
       name: 'AkoolReactSDK',
-      formats: ['es', 'umd'],
-      fileName: (format) => `index.${format}.js`,
+      fileName: 'akool-react-sdk'
     },
     rollupOptions: {
       external: [...Object.keys(packageJson.peerDependencies)],
