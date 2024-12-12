@@ -14,14 +14,14 @@ A React component library for integrating AI-powered video chat avatars into you
 ## Installation
 
 ```bash
-npm install akool-sdk
+npm install akool-react-sdk
 ```
 
 ## Quick Start
 
 ```tsx
-import { VideoChatProvider, ChatWidget } from 'akool-sdk'
-import 'akool-sdk/akool-sdk.css'
+import { VideoChatProvider, ChatWidget } from 'akool-react-sdk'
+import 'akool-react-sdk/akool-react-sdk.css'
 
 const App = () => {
   return (
@@ -78,7 +78,7 @@ A pre-built chat interface component with video display.
 ### Basic Implementation
 
 ```tsx
-import { VideoChatProvider, ChatWidget } from 'akool-sdk'
+import { VideoChatProvider, ChatWidget } from 'akool-react-sdk'
 
 const App = () => {
   return (
@@ -94,7 +94,7 @@ const App = () => {
 ### Using the useVideoChat Hook
 
 ```jsx
-import { useVideoChat } from 'akool-sdk'
+import { useVideoChat } from 'akool-react-sdk'
 
 function CustomChatInterface() {
   const { 
