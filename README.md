@@ -135,6 +135,13 @@ sendMessage({
 if you are implmenting your custom solution make sure to call the `closeStreaming` function when the user leaves the chat / when session ends.
 
 
+## General Guidelines
+
+1. To use the sdk, you need to have a valid openapi token. You can get the token using client id and secret which you can get from [Akool Dashboard](https://akool.com/workspace/{workspaceId}/api/credentials). Once you have the client id and secret refer to [Akool OpenAPI Documentation](https://docs.akool.io/authentication/usage#get-the-token) to get the token.
+
+2. To use `useChat` hook, you must wrap your component with `VideoChatProvider` and pass the `openapiToken` to it.
+
+3. If you are using `useChat` hook, you must call `closeStreaming` function when the user leaves the chat / when session ends.
 
 
 ## Requirements
