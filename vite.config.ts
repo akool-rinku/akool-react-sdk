@@ -13,7 +13,9 @@ export default defineConfig(() => ({
     react(),
     tsConfigPaths(),
     dts({
-      include: ['src/component/'],
+      include: ['src/components/'],
+      insertTypesEntry: true, // Add this line
+      rollupTypes: true,      // Add this line
     }),
   ],
   resolve: {
