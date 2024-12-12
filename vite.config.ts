@@ -1,4 +1,3 @@
-
 import { resolve } from 'path'
 
 import react from '@vitejs/plugin-react-swc'
@@ -22,14 +21,16 @@ export default defineConfig(() => ({
   ],
   
   build: {
-    sourcemap: true,
     lib: {
-      entry: 'src/index.tsx',
+      entry: resolve(__dirname, 'src/index.tsx'), 
       name: 'AkoolReactSDK',
-      fileName: 'akool-react-sdk'
     },
     rollupOptions: {
       external: [...Object.keys(packageJson.peerDependencies)],
+      output: {
+        assetFileNames: 'assets/[name][extname]',
+        entryFileNames: '[name].js',
+      }
     },
   },
 }))
