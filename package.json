@@ -1,5 +1,5 @@
 {
-  "name": "akool-sdk",
+  "name": "akool-react-sdk",
   "private": false,
   "version": "1.0.0",
   "type": "module",
@@ -28,13 +28,13 @@
   ],
   "exports": {
     ".": {
-      "import": "./dist/akool-sdk.es.js",
-      "require": "./dist/akool-sdk.umd.js"
+      "import": "./dist/akool-react-sdk.es.js",
+      "require": "./dist/akool-react-sdk.umd.js"
     },
     "./dist/style.css": "./dist/style.css"
   },
-  "main": "./dist/akool-sdk.umd.js",
-  "module": "./dist/akool-sdk.es.js",
+  "main": "./dist/akool-react-sdk.umd.js",
+  "module": "./dist/akool-react-sdk.es.js",
   "types": "./dist/index.d.ts",
   "devDependencies": {
     "@types/node": "^22.10.2",
@@ -70,14 +70,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/akool-rinku/akool-sdk.git"
+    "url": "git+https://github.com/akool-rinku/akool-react-sdk.git"
   },
   "keywords": [],
   "author": "bigyan poudel",
   "bugs": {
-    "url": "https://github.com/akool-rinku/akool-sdk/issues"
+    "url": "https://github.com/akool-rinku/akool-react-sdk/issues"
   },
-  "homepage": "https://github.com/akool-rinku/akool-sdk#readme",
+  "homepage": "https://github.com/akool-rinku/akool-react-sdk#readme",
   "license": "MIT",
   "dependencies": {
     "@radix-ui/react-avatar": "^1.1.1",

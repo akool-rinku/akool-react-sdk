@@ -1,6 +1,6 @@
 import React from 'react'
 import './components/index.css'
-import { ChatWidget, VideoChatProvider } from 'akool-sdk'
+import { ChatWidget, VideoChatProvider } from 'akool-react-sdk'
 const App = () => {
   return (
     <VideoChatProvider

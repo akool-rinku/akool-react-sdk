@@ -24,9 +24,9 @@ export default defineConfig(() => ({
   build: {
     lib: {
       entry: resolve('src', 'components/index.ts'),
-      name: 'AkoolLibrary',
+      name: 'AkoolReactSDK',
       formats: ['es', 'umd'],
-      fileName: (format) => `akool-sdk.${format}.js`,
+      fileName: (format) => `akool-react-sdk.${format}.js`,
     },
     rollupOptions: {
       external: [...Object.keys(packageJson.peerDependencies)],
