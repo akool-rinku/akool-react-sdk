@@ -28,13 +28,13 @@
   ],
   "exports": {
     ".": {
-      "import": "./dist/akool-react-sdk.es.js",
-      "require": "./dist/akool-react-sdk.umd.js"
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.umd.js"
     },
-    "./dist/style.css": "./dist/style.css"
+    "./dist/style.css": "./dist/akool-react-sdk.css"
   },
-  "main": "./dist/akool-react-sdk.umd.js",
-  "module": "./dist/akool-react-sdk.es.js",
+  "main": "./dist/index.umd.js",
+  "module": "./dist/index.es.js",
   "types": "./dist/index.d.ts",
   "devDependencies": {
     "@types/node": "^22.10.2",

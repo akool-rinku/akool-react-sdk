@@ -20,7 +20,7 @@
     "baseUrl": ".",
      "paths": {
       "@/*": ["./src/*"],
-      "akool-react-sdk": [ "src/components/index.ts" ]
+      "akool-react-sdk": [ "src/index.ts" ]
     },
     "typeRoots": [
       "node_modules/@types",
