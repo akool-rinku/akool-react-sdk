@@ -70,14 +70,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/bigyanpoudel/react-vite-library"
+    "url": "https://github.com/akool-rinku/akool-sdk"
   },
   "keywords": [],
   "author": "bigyan poudel",
   "bugs": {
-    "url": "https://github.com/bigyanpoudel/react-vite-library/issues"
+    "url": "https://github.com/akool-rinku/akool-sdk/issues"
   },
-  "homepage": "https://github.com/bigyanpoudel/react-vite-library#readme",
+  "homepage": "https://github.com/akool-rinku/akool-sdk#readme",
   "license": "MIT",
   "dependencies": {
     "@radix-ui/react-avatar": "^1.1.1",
