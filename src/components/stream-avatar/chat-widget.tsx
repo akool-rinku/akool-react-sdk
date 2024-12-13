@@ -42,70 +42,70 @@ export default function ChatWidget({ title, personality }:{
   }
 
   return (
-    <div className="fixed bottom-4 right-4 z-50">
+    <div className="tw-fixed tw-bottom-4 tw-right-4 tw-z-50">
       <AnimatePresence>
-        {isOpen && (
+        {(
           <motion.div
             initial={{ scale: 0, opacity: 0, transformOrigin: 'bottom right' }}
-            animate={{ scale: 1, opacity: 1 }}
+            animate={{ scale: isOpen ? 1 : 0, opacity: isOpen ? 1 : 0 }}
             exit={{ scale: 0, opacity: 0 }}
             transition={{ duration: 0.2, ease: 'easeOut' }}
           >
             
             <Card className={cn(
-              "w-[420px] h-[600px] overflow-hidden flex flex-col shadow-xl absolute bottom-full mb-2 right-0",
-              "sm:h-[600px]"
+              "tw-w-[420px] tw-h-[600px] tw-overflow-hidden tw-flex tw-flex-col tw-shadow-xl tw-absolute tw-bottom-full tw-mb-2 tw-right-0",
+              "tw-sm:tw-h-[600px]"
             )}>
-              <CardHeader className="flex flex-row items-center justify-between space-y-0 p-2 border-b">
-                <div className="flex items-center gap-2 font-semibold text-sm">
+              <div className="tw-flex tw-flex-row tw-items-center tw-justify-between tw-space-y-0 tw-p-2 tw-border-b">
+                <div className="tw-flex tw-items-center tw-gap-2 tw-font-semibold tw-text-sm">
                   {title || 'Akool Streaming AI'}
                 </div>
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="h-8 w-8"
+                  className="tw-h-8 tw-w-8"
                   onClick={() => setIsOpen(false)}
                 >
-                  <X className="h-5 w-5" />
+                  <X className="tw-h-5 tw-w-5" />
                 </Button>
-              </CardHeader>
-              <div className="flex-1 overflow-y-auto h-full flex flex-col rounded-b-xl overflow-hidden relative">
+              </div>
+              <div className="tw-flex-1 tw-overflow-y-auto tw-h-full tw-flex tw-flex-col tw-rounded-b-xl tw-overflow-hidden tw-relative">
                 
-              <video id="akool-remote-video" src="https://static.website-files.org/assets/videos/avatar/live/Alina_loop-1.mp4" className={cn("absolute inset-0 w-full h-full object-cover", {
-                "hidden": !isVideoAvailable
+              <video id="akool-remote-video" className={cn("tw-absolute tw-inset-0 tw-w-full tw-h-full tw-object-cover", {
+                "tw-hidden": !isVideoAvailable
               })} autoPlay loop muted></video>
-              {isVideoAvailable ? null : <div className="absolute inset-0 flex items-center justify-center">
+              {isVideoAvailable ? null : <div className="tw-absolute tw-inset-0 tw-flex tw-items-center tw-justify-center">
                 <Loading />
               </div>}
-              <CardContent className="flex-1 overflow-y-auto p-4 space-y-4 z-10 flex flex-col justify-end">
+              <CardContent className="tw-flex-1 tw-overflow-y-auto tw-p-4 tw-space-y-4 tw-z-10 tw-flex tw-flex-col tw-justify-end">
                 {messages.map((message, idx) => (
                   <div
                     key={idx}
                     className={cn(
-                      "flex gap-2 text-sm",
-                      message.isSentByMe ? "flex-row-reverse" : "flex-row"
+                      "tw-flex tw-gap-2 tw-text-sm",
+                      message.isSentByMe ? "tw-flex-row-reverse" : "tw-flex-row"
                     )}
                   >
                     {!message.isSentByMe && (
-                      <Avatar className="h-8 w-8">
+                      <Avatar className="tw-h-8 tw-w-8">
                         <AvatarImage src="/placeholder.svg?height=32&width=32" />
                         <AvatarFallback>AI</AvatarFallback>
                       </Avatar>
                     )}
                     <div
                       className={cn(
-                        "rounded-2xl py-2 px-4 max-w-[80%]",
+                        "tw-rounded-2xl tw-py-2 tw-px-4 tw-max-w-[80%]",
                         message.isSentByMe
-                          ? "bg-primary text-primary-foreground"
-                          : "bg-muted"
+                          ? "tw-bg-primary tw-text-primary-foreground"
+                          : "tw-bg-muted"
                       )}
                     >
                       <div>{message.text}</div>
                       <div className={cn(
-                        "text-xs mt-1",
+                        "tw-text-xs tw-mt-1",
                         message.isSentByMe 
-                          ? "text-primary-foreground/80"
-                          : "text-muted-foreground"
+                          ? "tw-text-primary-foreground/80"
+                          : "tw-text-muted-foreground"
                       )}>
                         {/* {message.createdAt} */}
                       </div>
@@ -113,13 +113,13 @@ export default function ChatWidget({ title, personality }:{
                   </div>
                 ))}
               </CardContent>
-              <div className="p-4 border-t">
+              <div className="tw-p-4 tw-border-t">
                 <form
                   onSubmit={(e) => {
                     e.preventDefault()
                     handleSend()
                   }}
-                  className="flex flex-col gap-2 relative"
+                  className="tw-flex tw-flex-col tw-gap-2 tw-relative"
                 >
                  
                   <Input
@@ -127,18 +127,18 @@ export default function ChatWidget({ title, personality }:{
                     placeholder="Type a message..."
                     value={inputMessage}
                     onChange={(e) => setInputMessage(e.target.value)}
-                    className="flex-1"
+                    className="tw-flex-1"
                   />
                    <button 
                     type="submit" 
-                    className="self-end absolute bottom-0 right-0 p-2 h-full aspect-square inline-flex items-center justify-center"
+                    className="tw-self-end tw-absolute tw-bottom-0 tw-right-0 tw-p-2 tw-h-full tw-aspect-square tw-inline-flex tw-items-center tw-justify-center"
                   >
-                    <SendHorizonal className="h-4 w-4 text-primary" />
+                    <SendHorizonal className="tw-h-4 tw-w-4 tw-text-primary" />
                   </button>
                 </form>
-                <div className="text-xs text-muted-foreground text-center mt-2">
-                Powered by <a href="https://akool.ai" className="text-primary">
-                <img src="/akool-logo.png" className="h-4 inline-block" />
+                <div className="tw-text-xs tw-text-muted-foreground tw-text-center tw-mt-2">
+                Powered by <a href="https://akool.ai" className="tw-text-primary">
+                <img src="/akool-logo.png" className="tw-h-4 tw-inline-block" />
                 </a>
                 </div>
               </div>
@@ -155,7 +155,7 @@ export default function ChatWidget({ title, personality }:{
         <Button
           size="icon"
           variant={isOpen ? "default" : "outline"}
-          className="h-12 w-12 rounded-full shadow-lg"
+          className="tw-h-12 tw-w-12 !tw-rounded-full tw-shadow-lg"
           onClick={() => {
             setIsOpen(!isOpen)
             if (!isJoined) {
@@ -163,7 +163,7 @@ export default function ChatWidget({ title, personality }:{
             }
           }}
         >
-         {isOpen ? <X className="h-6 w-6" /> : <MessageCircle className="h-6 w-6" />}
+         {isOpen ? <X className="tw-h-6 tw-w-6" /> : <MessageCircle className="tw-h-6 tw-w-6" />}
         </Button>
       </motion.div>
     </div>

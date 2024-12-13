@@ -21,7 +21,7 @@ npm install akool-react-sdk
 
 ```tsx
 import { VideoChatProvider, ChatWidget } from 'akool-react-sdk'
-import 'akool-react-sdk/akool-react-sdk.css'
+import 'akool-react-sdk/dist/style.css'
 
 const App = () => {
   return (
@@ -137,12 +137,19 @@ if you are implmenting your custom solution make sure to call the `closeStreamin
 
 ## General Guidelines
 
-1. To use the sdk, you need to have a valid openapi token. You can get the token using client id and secret which you can get from [Akool Dashboard](https://akool.com/workspace/{workspaceId}/api/credentials). Once you have the client id and secret refer to [Akool OpenAPI Documentation](https://docs.akool.io/authentication/usage#get-the-token) to get the token.
+1. To use the sdk, you need to have a valid openapi token. You can get the token using client id and secret which you can get from [Akool Dashboard](https://akool.com/workspace/{workspaceId}/api/credentials). Once you have the client id and secret refer to [Akool OpenAPI Documentation](https://docs.akool.io/authentication/usage#get-the-token) to get the token. Here is a curl request to get the token:
+
+```bash
+curl -X POST https://openapi.akool.com/api/v1/auth/token \
+-H "Content-Type: application/json" \
+-d '{"clientId":"your-client-id","clientSecret":"your-client-secret"}'
+```
 
 2. To use `useChat` hook, you must wrap your component with `VideoChatProvider` and pass the `openapiToken` to it.
 
 3. If you are using `useChat` hook, you must call `closeStreaming` function when the user leaves the chat / when session ends.
 
+4. If you are using `ChatWidget` component and it is not working, please check if you have added the `akool-react-sdk/dist/style.css` to your project.
 
 ## Requirements
 

@@ -11,7 +11,7 @@ const Loading = (props: SVGProps<SVGSVGElement>) => (
       background: "0 0",
       display: "block",
     }}
-    className="text-primary"
+    className="tw-text-primary"
     viewBox="0 0 100 100"
     {...props}
   >
